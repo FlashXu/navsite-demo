@@ -61,8 +61,6 @@ body {
   border-radius: 0 10px 10px 0;
   white-space: nowrap;
 }
-.siteMain {
-}
 .siteList {
   margin: 0 auto;
   width: 600px;
@@ -71,6 +69,7 @@ body {
   flex-wrap: wrap;
 }
 .siteList > li {
+  position: relative;
 }
 .siteList .site {
   width: 100px;
@@ -83,7 +82,13 @@ body {
   align-items: center;
   flex-direction: column;
   margin-bottom: 20px;
+  cursor: pointer;
 }
+
+.siteList .site:hover {
+  background: #a7aab5;
+}
+
 .siteList .site > .logo {
   font-size: 40px;
   height: 50px;
@@ -93,6 +98,24 @@ body {
 }
 .siteList .site .logo > img {
   max-height: 100%;
+}
+
+.siteList > li > .del {
+  position: absolute;
+  background: inherit;
+  border: none;
+  top: 0%;
+  z-index: 1;
+  left: 72.5%;
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
+.siteList > li:hover > .del {
+  background: #a7aab5;
+  cursor: default;
+  display: block;
 }
 
 @media (max-width: 500px) {
@@ -113,4 +136,4 @@ body {
 }
 
 
-/*# sourceMappingURL=/style.e308ff8e.css.map */
+/*# sourceMappingURL=style.09aae339.css.map */

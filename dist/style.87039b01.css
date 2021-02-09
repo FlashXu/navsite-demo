@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ul,
+ol {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+input,
+button {
+  outline: none;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+body {
+  background-color: white;
+  text-align: center;
+}
+body:after {
+  content: "";
+  background: url(miku.338e33a4.jpg);
+  background-size: cover;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+.searchForm {
+  margin: 20px 0 50px 0;
+  display: flex;
+  justify-content: center;
+}
+.siteHeader > img {
+  width: 300px;
+  margin: 50px 0 10px 0;
+}
+.searchForm > input {
+  width: 600px;
+  height: 40px;
+  border-width: 3px 0 3px 3px;
+  border-color: #a7aab5;
+  border-style: solid;
+  border-radius: 10px 0 0 10px;
+  padding: 0 10px;
+  font-size: large;
+}
+.searchForm > input:focus {
+  border-width: 3px 0 3px 3px;
+  border-color: #4e6ef2;
+  border-style: solid;
+}
+.searchForm > button {
+  width: 80px;
+  background-color: #4e6ef2;
+  font-size: large;
+  color: white;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  white-space: nowrap;
+}
+.siteList {
+  margin: 0 auto;
+  width: 600px;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.siteList > li {
+  position: relative;
+}
+.siteList .site {
+  width: 100px;
+  height: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 3px solid #a7aab5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.siteList .site:hover {
+  background: white;
+}
+
+.siteList .site > .logo {
+  font-size: 40px;
+  height: 50px;
+}
+.siteList .site > .link {
+  font-size: 12px;
+}
+.siteList .site .logo > img {
+  max-height: 100%;
+}
+
+.siteList > li > .del {
+  position: absolute;
+  background: inherit;
+  border: none;
+  top: 0%;
+  z-index: 1;
+  left: 72.5%;
+  width: 20px;
+  height: 20px;
+  display: none;
+}
+
+.siteList > li:hover > .del {
+  background: #a7aab5;
+  cursor: default;
+  display: block;
+}
+
+@media (max-width: 500px) {
+  .siteHeader > img {
+    width: 250px;
+    margin: 50px 0 10px 0;
+  }
+  .searchForm > input {
+    width: 220px;
+  }
+  .siteList {
+    width: 320px;
+  }
+  .siteList .site {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+  }
+}
+
+
+/*# sourceMappingURL=style.87039b01.css.map */

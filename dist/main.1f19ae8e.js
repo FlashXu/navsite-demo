@@ -118,7 +118,47 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"main.js":[function(require,module,exports) {
+var $siteList = $(".siteList");
+var $last = $siteList.find("li.lastItem");
+var hashMap = [{
+  url: "https://github.com/",
+  logoType: "text"
+}, {
+  url: "https://www.bilibili.com/",
+  logoType: "img",
+  logoSrc: "../img/bilibili.png"
+}, {
+  url: "https://www.acfun.cn/",
+  logoType: "text"
+}];
+render();
+$("#addButton").on("click", function () {
+  var url = window.prompt("请输入您要添加的网址：");
+  url = url.indexOf("http") !== 0 ? "https://" + url : url;
+  websiteName = getWebName(url);
+  var $li = $("<li>\n  <a href=\"".concat(url, "\">\n    <div class=\"site\">\n      <div class=\"logo\">").concat(websiteName[0].toUpperCase(), "</div>\n      <div class=\"link\">").concat(websiteName, "</div>\n    </div>\n  </a>\n</li>")).insertBefore($last);
+  hashMap.push({
+    url: url,
+    logoType: "text"
+  });
+  render();
+});
 
+function getWebName(url) {
+  var name = url.indexOf("http") !== 0 ? "https://" + url : url;
+  var nameFlag = name.split("//")[1].split(".");
+  var websiteName = nameFlag[0] === "www" ? nameFlag[1] : nameFlag[0];
+  return websiteName;
+}
+
+function render() {
+  $siteList.find("li:not(.lastItem)").remove();
+  hashMap.forEach(function (node) {
+    var websiteName = getWebName(node.url);
+    var logo = node.logoType === "img" ? "<img src=".concat(node.logoSrc, " />") : websiteName[0].toUpperCase();
+    var $li = $("<li>\n        <a href=\"".concat(node.url, "\">\n          <div class=\"site\">\n            <div class=\"logo\">").concat(logo, "</div>\n            <div class=\"link\">").concat(websiteName, "</div>\n          </div>\n        </a>\n      </li>")).insertBefore($last);
+  });
+}
 },{}],"../../../../../../AppData/Local/Yarn/Data/global/node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -147,7 +187,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "2258" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63213" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

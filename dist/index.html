@@ -8,40 +8,29 @@
   <script src="/style.e308ff8e.js"></script></head>
   <body>
     <header class="siteHeader">
-      <img src="/logo.7433d22f.png" alt="">
+      <img src="/logo.7433d22f.png">
       <div class="searchBar">
-        <input type="text">
-        <button>搜索</button>
+        <form class="searchForm" method="GET" action="https://www.baidu.com/s">
+          <input name="wd" type="text"> <button type="submit">搜索</button>
+        </form>
       </div>
     </header>
     <main class="siteMain">
       <ul class="siteList">
-        <li>
-          <div class="site">
-            <div class="logo">G</div>
-            <div class="link">github</div>
-          </div>
-        </li>
-        <li>
-          <div class="site">
-            <div class="logo">B</div>
-            <div class="link">bilibili</div>
-          </div>
-        </li>
-        <li>
-          <div class="site">
-            <div class="logo">A</div>
-            <div class="link">acfun</div>
-          </div>
-        </li>
-        <li>
-          <div class="site">
-            <div class="logo">+</div>
-            <div class="link"></div>
+        <li class="lastItem">
+          <div class="site" id="addButton">
+            <div class="logo">
+              <svg class="icon">
+                <use xlink:href="#icon-jiahao"></use>
+              </svg>
+            </div>
+            <div class="link">新增网站</div>
           </div>
         </li>
       </ul>
     </main>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//at.alicdn.com/t/font_2371645_l84te9wxuu9.js"></script>
     <script src="/main.1f19ae8e.js"></script>
   </body>
 </html>

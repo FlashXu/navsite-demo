@@ -7,15 +7,28 @@ ul,
 ol {
   list-style: none;
 }
+a {
+  color: inherit;
+  text-decoration: none;
+}
 input,
 button {
   outline: none;
 }
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
 body {
   background-color: white;
   text-align: center;
 }
-.searchBar {
+.searchForm {
   margin: 20px 0 50px 0;
   display: flex;
   justify-content: center;
@@ -24,7 +37,7 @@ body {
   width: 300px;
   margin: 50px 0 10px 0;
 }
-.searchBar > input {
+.searchForm > input {
   width: 600px;
   height: 40px;
   border-width: 3px 0 3px 3px;
@@ -34,12 +47,12 @@ body {
   padding: 0 10px;
   font-size: large;
 }
-.searchBar > input:focus {
+.searchForm > input:focus {
   border-width: 3px 0 3px 3px;
   border-color: #4e6ef2;
   border-style: solid;
 }
-.searchBar > button {
+.searchForm > button {
   width: 80px;
   background-color: #4e6ef2;
   font-size: large;
@@ -54,7 +67,7 @@ body {
   margin: 0 auto;
   width: 600px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 .siteList > li {
@@ -62,6 +75,8 @@ body {
 .siteList .site {
   width: 100px;
   height: 80px;
+  margin-left: 10px;
+  margin-right: 10px;
   border: 3px solid #a7aab5;
   display: flex;
   justify-content: center;
@@ -71,9 +86,13 @@ body {
 }
 .siteList .site > .logo {
   font-size: 40px;
+  height: 50px;
 }
 .siteList .site > .link {
   font-size: 12px;
+}
+.siteList .site .logo > img {
+  max-height: 100%;
 }
 
 @media (max-width: 500px) {
@@ -81,10 +100,14 @@ body {
     width: 250px;
     margin: 50px 0 10px 0;
   }
-  .searchBar > input {
+  .searchForm > input {
     width: 220px;
   }
   .siteList {
     width: 320px;
+  }
+  .siteList .site {
+    margin-left: 2.5px;
+    margin-right: 2.5px;
   }
 }
